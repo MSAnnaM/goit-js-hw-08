@@ -15,13 +15,16 @@ function reloadTexte() {
 }
 
 const formTexte = event => {
-  event.preventDefault();
-  const { email, message } = event.currentTarget;
-  const savedTexte = {
-    email: email.value,
-    message: message.value,
-  };
-  localStorage.setItem(keyLocalStorage, JSON.stringify(savedTexte));
+    event.preventDefault();
+    if (event && event.currentTarget) {
+        const { email, message } = event.currentTarget;
+    };
+        const savedTexte = {
+            email: email.value,
+            message: message.value,
+        };
+        localStorage.setItem(keyLocalStorage, JSON.stringify(savedTexte));
+    
 };
 const completedForm = event => {
   event.preventDefault();
